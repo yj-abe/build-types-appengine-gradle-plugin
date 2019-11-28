@@ -23,6 +23,7 @@ open class RunSetupTask @Inject constructor(
                             serviceVersion?.let { originalRun.serverVersion = it }
                             services?.let { originalRun.setServices(it) }
                             startSuccessTimeout?.let { originalRun.startSuccessTimeout = it }
+                            originalRun.projectId = projectId // 何故かローカル実行でもprojectIdが必須なので、設定する。
                         }
                     }
                 }
