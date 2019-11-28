@@ -3,8 +3,9 @@ package jp.cloudace.buildtypes.appengine.task.run
 import com.google.cloud.tools.gradle.appengine.standard.AppEngineStandardExtension
 import jp.cloudace.buildtypes.appengine.dsl.run.Run
 import org.gradle.api.DefaultTask
+import javax.inject.Inject
 
-open class RunSetupTask(
+open class RunSetupTask @Inject constructor(
     private val run: Run
 ) : DefaultTask() {
 
