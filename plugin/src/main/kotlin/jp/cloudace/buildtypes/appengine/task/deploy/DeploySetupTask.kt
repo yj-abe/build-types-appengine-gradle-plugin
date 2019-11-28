@@ -3,8 +3,9 @@ package jp.cloudace.buildtypes.appengine.task.deploy
 import com.google.cloud.tools.gradle.appengine.standard.AppEngineStandardExtension
 import jp.cloudace.buildtypes.appengine.dsl.deploy.Deploy
 import org.gradle.api.DefaultTask
+import javax.inject.Inject
 
-open class DeploySetupTask(
+open class DeploySetupTask @Inject constructor(
     private val deploy: Deploy
 ) : DefaultTask() {
 
