@@ -98,17 +98,17 @@ appengineのデプロイに関する設定を行います。
 
 ```groovy
 appengine {
-	deploy {
-		dev {
-			projectId = "dev-project-id"
-			promote = true
-		}
-		stg {
-			projectId = "stg-project-id"
-			version = "fix-bug-check"
-		}
-		...
-	}
+    deploy {
+        dev {
+            projectId = "dev-project-id"
+            promote = true
+        }
+        stg {
+            projectId = "stg-project-id"
+            version = "fix-bug-check"
+        }
+        ...
+    }
 }
 ```
 
@@ -138,11 +138,11 @@ appengineのローカルサーバー起動に関する設定を行います。
 
 ```groovy
 appengine {
-	run {
-		local {
-			port = 8888
-		}
-	}
+    run {
+        local {
+            port = 8888
+        }
+    }
 }
 ```
 
