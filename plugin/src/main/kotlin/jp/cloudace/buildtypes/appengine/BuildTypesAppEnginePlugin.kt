@@ -74,7 +74,7 @@ open class BuildTypesAppEnginePlugin : Plugin<Project> {
             run
         )
 
-        project.tasks.create("run${capitalizedName}AppEngine").apply {
+        project.tasks.create("appengine${capitalizedName}Run").apply {
             dependsOn(setupTask)
             dependsOn("build$capitalizedName")
             dependsOn("appengineRun")

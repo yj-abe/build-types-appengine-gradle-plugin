@@ -13,5 +13,6 @@ class Run(
     var serviceVersion: String? = null
     var services: MutableList<File>? = null
     var startSuccessTimeout: Int? = null
+    var projectId: String = name
 
 }
