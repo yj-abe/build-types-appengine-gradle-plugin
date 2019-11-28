@@ -53,7 +53,7 @@ open class BuildTypesAppEnginePlugin : Plugin<Project> {
             deploy
         )
 
-        project.tasks.create("deploy${capitalizedName}AppEngine").apply {
+        project.tasks.create("appengine${capitalizedName}Deploy").apply {
             dependsOn(setupTask)
             dependsOn("build$capitalizedName")
             dependsOn("appengineDeploy")
