@@ -17,10 +17,10 @@ open class RunSetupTask @Inject constructor(
                     appengine.run { originalRun ->
                         run.apply {
                             environment?.let { originalRun.environment = it }
-                            jmvFlags?.let { originalRun.jvmFlags = it }
+                            jvmFlags?.let { originalRun.jvmFlags = it }
                             port?.let { originalRun.port = it }
                             host?.let { originalRun.host = it }
-                            serviceVersion?.let { originalRun.serverVersion = it }
+                            serverVersion?.let { originalRun.serverVersion = it }
                             services?.let { originalRun.setServices(it) }
                             startSuccessTimeout?.let { originalRun.startSuccessTimeout = it }
                             originalRun.projectId = projectId // 何故かローカル実行でもprojectIdが必須なので、設定する。

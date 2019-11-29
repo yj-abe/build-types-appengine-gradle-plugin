@@ -7,10 +7,10 @@ class Run(
 ) {
 
     var environment: Map<String, String>? = null
-    var jmvFlags: List<String>? = null
+    var jvmFlags: List<String>? = null
     var port: Int? = null
     var host: String? = null
-    var serviceVersion: String? = null
+    var serverVersion: String? = null
     var services: MutableList<File>? = null
     var startSuccessTimeout: Int? = null
     var projectId: String = name
