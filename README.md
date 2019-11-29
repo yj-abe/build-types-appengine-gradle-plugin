@@ -23,7 +23,7 @@ buildscript {
     }
     dependencies {
         classpath 'jp.cloudace:buildtypes:0.2.0'
-        classpath 'jp.cloudace:buildtypes-appengine:0.1.3'
+        classpath 'jp.cloudace:buildtypes-appengine:0.1.4'
         classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.2.0'
     }
 }
