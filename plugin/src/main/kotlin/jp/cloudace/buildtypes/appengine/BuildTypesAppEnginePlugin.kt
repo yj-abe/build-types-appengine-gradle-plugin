@@ -22,7 +22,7 @@ open class BuildTypesAppEnginePlugin : Plugin<Project> {
             BuildTypesPlugin().apply(project)
         }
 
-        val isStandard = project.extensions.getByType(AppEngineStandardExtension::class.java) != null
+        val isStandard = project.extensions.findByType(AppEngineStandardExtension::class.java) != null
 
         project.extensions.getByType(BuildTypes::class.java)
             .let { it as ExtensionAware }
