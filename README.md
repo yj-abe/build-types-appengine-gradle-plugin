@@ -135,6 +135,7 @@ deployで指定出来るプロパティはAppEngine Pluginで定義されてい�
 
 appengineのローカルサーバー起動に関する設定を行います。  
 `run`ビルドスクリプトの中で、ローカルサーバーの設定を行いたいビルドタイプを指定し、各プロパティを設定します。
+このビルドスクリプトはappengine-web.xmlを使用したプロジェクトでのみ有効となります。
 
 ```groovy
 appengine {
@@ -156,4 +157,32 @@ runで指定出来るプロパティはAppEngine Pluginで定義されている�
 
 ```
 ./gradlew appengineLocalRun
+```
+
+### stage
+
+appengineのアプリケーションディレクトリに関する設定を行います。  
+`stage`ビルドスクリプトの中で、設定を行いたいビルドタイプを指定し、各プロパティを設定します。
+このビルドスクリプトはapp.yamlを使用した場合と、appengine-web.xml
+を使用した場合で有効なプロパティが変わります。  
+詳しくは以下を参照してください。
++ [appengine-web.xml](https://cloud.google.com/appengine/docs/standard/java/tools/gradle-reference?hl=ja#appenginestage)
++ [app.yaml](https://cloud.google.com/appengine/docs/standard/java11/gradle-reference?hl=ja#appenginestage)
+
+```groovy
+appengine {
+    stage {
+        develop {
+            appEngineDirectory = "."
+        }
+    }
+}
+```
+
+各ビルドタイプ毎に、`appengine${BuildTypeName}Stage`タスクが生成され、実行すると`stage`で設定した内容で`appengineStage`タスクを実行します。
+
+例:
+
+```
+./gradlew appengineDevelopStage
 ```
