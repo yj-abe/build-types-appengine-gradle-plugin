@@ -1,4 +1,4 @@
-package jp.cloudace.buildtypes.appengine.dsl.deploy
+package jp.cloudace.buildtypes.appengine.core.dsl.deploy
 
 import java.io.File
 
