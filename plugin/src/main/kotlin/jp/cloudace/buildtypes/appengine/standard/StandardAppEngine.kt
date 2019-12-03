@@ -80,6 +80,10 @@ open class StandardAppEngine(
             mustRunAfter("build$capitalizedName")
             mustRunAfter(setupTask)
         }
+
+        project.tasks.findByName("appengine${capitalizedName}Deploy")?.apply {
+            dependsOn("appengine${capitalizedName}Stage")
+        }
     }
 
 }

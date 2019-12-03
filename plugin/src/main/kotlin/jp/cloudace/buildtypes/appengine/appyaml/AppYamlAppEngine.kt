@@ -1,9 +1,9 @@
 package jp.cloudace.buildtypes.appengine.appyaml
 
 import groovy.lang.Closure
-import jp.cloudace.buildtypes.appengine.core.AppEngine
 import jp.cloudace.buildtypes.appengine.appyaml.dsl.stage.Stage
 import jp.cloudace.buildtypes.appengine.appyaml.task.stage.StageSetupTask
+import jp.cloudace.buildtypes.appengine.core.AppEngine
 import jp.cloudace.buildtypes.extention.BuildType
 import jp.cloudace.buildtypes.extention.BuildTypes
 import org.gradle.api.NamedDomainObjectContainer
@@ -44,5 +44,10 @@ open class AppYamlAppEngine(
             mustRunAfter("build$capitalizedName")
             mustRunAfter(setupTask)
         }
+
+        project.tasks.findByName("appengine${capitalizedName}Deploy")?.apply {
+            dependsOn("appengine${capitalizedName}Stage")
+        }
+
     }
 }
