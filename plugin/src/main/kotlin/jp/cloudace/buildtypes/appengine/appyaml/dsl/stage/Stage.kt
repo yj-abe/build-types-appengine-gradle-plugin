@@ -9,7 +9,7 @@ open class Stage(
     var artifact: File? = null
     var dockerDirectory: File? = null
     var appEngineDirectory: Any? = null
-    var stagingDirectory: File? = null
+    var stagingDirectory: Any? = null
     var extraFilesDirectories: List<File>? = null
 
 }
