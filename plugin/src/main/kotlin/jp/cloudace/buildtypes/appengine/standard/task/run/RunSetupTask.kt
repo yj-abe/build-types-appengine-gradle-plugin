@@ -1,7 +1,7 @@
-package jp.cloudace.buildtypes.appengine.task.run
+package jp.cloudace.buildtypes.appengine.standard.task.run
 
 import com.google.cloud.tools.gradle.appengine.standard.AppEngineStandardExtension
-import jp.cloudace.buildtypes.appengine.dsl.run.Run
+import jp.cloudace.buildtypes.appengine.standard.dsl.run.Run
 import org.gradle.api.DefaultTask
 import javax.inject.Inject
 
@@ -28,7 +28,6 @@ open class RunSetupTask @Inject constructor(
                     }
                 }
         }
-
     }
 
 }

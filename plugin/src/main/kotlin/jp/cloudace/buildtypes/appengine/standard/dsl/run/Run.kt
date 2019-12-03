@@ -1,4 +1,4 @@
-package jp.cloudace.buildtypes.appengine.dsl.run
+package jp.cloudace.buildtypes.appengine.standard.dsl.run
 
 import java.io.File
 

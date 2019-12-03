@@ -1,7 +1,7 @@
-package jp.cloudace.buildtypes.appengine.task.deploy
+package jp.cloudace.buildtypes.appengine.core.task.deploy
 
 import com.google.cloud.tools.gradle.appengine.standard.AppEngineStandardExtension
-import jp.cloudace.buildtypes.appengine.dsl.deploy.Deploy
+import jp.cloudace.buildtypes.appengine.core.dsl.deploy.Deploy
 import org.gradle.api.DefaultTask
 import javax.inject.Inject
 
@@ -24,7 +24,6 @@ open class DeploySetupTask @Inject constructor(
                             deploy.imageUrl?.let { imageUrl = it }
                             deploy.server?.let { server = it }
                             deploy.stopPreviousVersion?.let { stopPreviousVersion = it }
-
                         }
                     }
                 }
