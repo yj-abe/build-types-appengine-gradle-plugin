@@ -55,7 +55,29 @@ abstract class AppEngine(
             dependsOn("appengineDeploy")
         }
 
+        project.tasks.create("appengine${capitalizedName}DeployQueue").apply {
+            dependsOn(setupTask)
+            dependsOn("build$capitalizedName")
+            dependsOn("appengineDeployQueue")
+        }
+
+        project.tasks.create("appengine${capitalizedName}DeployCron").apply {
+            dependsOn(setupTask)
+            dependsOn("build$capitalizedName")
+            dependsOn("appengineDeployCron")
+        }
+
         project.tasks.findByName("appengineDeploy")?.apply {
+            mustRunAfter("build$capitalizedName")
+            mustRunAfter(setupTask)
+        }
+
+        project.tasks.findByName("appengineDeployQueue")?.apply {
+            mustRunAfter("build$capitalizedName")
+            mustRunAfter(setupTask)
+        }
+
+        project.tasks.findByName("appengineDeployCron")?.apply {
             mustRunAfter("build$capitalizedName")
             mustRunAfter(setupTask)
         }
