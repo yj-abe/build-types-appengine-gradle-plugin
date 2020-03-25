@@ -131,6 +131,13 @@ deployで指定出来るプロパティはAppEngine Pluginで定義されてい�
 ./gradlew appengineDevDeploy
 ```
 
+また、同時にcron、queueのデプロイタスクも生成されます。
+
+```
+./gradle appengineDevDeployQueue
+./gradle appengineDevDeployCron
+```
+
 ### run
 
 appengineのローカルサーバー起動に関する設定を行います。  

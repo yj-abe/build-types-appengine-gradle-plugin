@@ -26,12 +26,11 @@ open class BuildTypesAppEnginePlugin : Plugin<Project> {
 
         project.extensions.getByType(BuildTypes::class.java)
             .let { it as ExtensionAware }
-            .let {
-                it.extensions.create(
-                    "appengine",
-                    if (isStandard) StandardAppEngine::class.java else AppYamlAppEngine::class.java,
-                    project
-                )
-            }
+            .extensions
+            .create(
+                "appengine",
+                if (isStandard) StandardAppEngine::class.java else AppYamlAppEngine::class.java,
+                project
+            )
     }
 }
